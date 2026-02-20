@@ -358,3 +358,6 @@ footer {
     h1 { font-size: 2rem; }
     .upload-area { padding: 30px 15px; }
 }
+
+#upload-instruction { transition: opacity 0.15s ease-in-out; }
+

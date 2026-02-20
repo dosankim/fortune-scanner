@@ -2,7 +2,14 @@
 const SCANNING_VIEW = 'scanning-view';
 const RESULT_VIEW = 'result-view';
 
-let selectedType = '손금';
+let selectedType = '족금';
+
+// Instruction Data Database
+const instructionData = {
+    '족금': '💡 <strong>족금 보는법:</strong> 발바닥 전체가 선명하게 나오도록 밝은 곳에서 찍어주세요! 부자들의 발금 모양을 AI가 완벽하게 판독해 드립니다.',
+    '손금': '💡 <strong>손금 보는법:</strong> 손바닥 전체가 선명하게 나오도록 밝은 곳에서 찍어주세요! 당신의 재물운과 애정운을 AI가 완벽하게 판독해 드립니다.',
+    '관상': '💡 <strong>관상 보는법:</strong> 이마부터 턱까지 얼굴 전체가 선명하게 나오도록 밝은 곳에서 찍어주세요! 숨겨진 당신의 대운을 AI가 완벽하게 판독해 드립니다.'
+};
 
 // Fortune Data Database (0 API Cost!)
 const fortuneData = {
@@ -132,11 +139,23 @@ initializeMediaPipe();
 document.addEventListener('DOMContentLoaded', () => {
     // Type Selection
     const typeButtons = document.querySelectorAll('.type-btn');
+    const uploadInstruction = document.getElementById('upload-instruction');
+
     typeButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             typeButtons.forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             selectedType = e.target.dataset.type;
+
+            // Update instruction text dynamically
+            if (uploadInstruction && instructionData[selectedType]) {
+                // Add a small fade effect for better UX
+                uploadInstruction.style.opacity = '0';
+                setTimeout(() => {
+                    uploadInstruction.innerHTML = instructionData[selectedType];
+                    uploadInstruction.style.opacity = '1';
+                }, 150);
+            }
         });
     });
 

@@ -78,9 +78,9 @@
         <section id="upload-view" class="view active">
             <h2>분석할 항목을 선택하세요</h2>
             <div class="type-selector">
-                <button class="type-btn active" data-type="손금">✋ 손금</button>
+                <button class="type-btn active" data-type="족금">🦶 족금</button>
+                <button class="type-btn" data-type="손금">✋ 손금</button>
                 <button class="type-btn" data-type="관상">👤 관상</button>
-                <button class="type-btn" data-type="족금">🦶 족금</button>
             </div>
 
             <div class="upload-area" id="upload-area">
@@ -89,8 +89,8 @@
                     <div class="upload-icon">📸</div>
                     <h3>사진을 업로드하거나 터치하여 촬영하세요</h3>
                     <p>분석 데이터는 서버에 저장되지 않아 기기에 안전하게 처리됩니다.</p>
-                    <!-- SEO Keyword Injection: 족금 보는법 -->
-                    <p style="font-size: 0.85rem; color: var(--accent); margin-bottom: 20px;">
+                    <!-- SEO Keyword Injection & Dynamic Instruction -->
+                    <p id="upload-instruction" style="font-size: 0.85rem; color: var(--accent); margin-bottom: 20px;">
                         💡 <strong>족금 보는법:</strong> 발바닥 전체가 선명하게 나오도록 밝은 곳에서 찍어주세요! 부자들의 발금 모양을 AI가 완벽하게 판독해 드립니다.
                     </p>
                     <button class="btn-primary" onclick="document.getElementById('image-upload').click()">사진
