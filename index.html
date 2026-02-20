@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 운명 스캐너 - 손금, 족상, 족금 완벽 분석</title>
+    <meta name="description" content="AI 기술을 활용한 정밀한 운명 분석. 손금, 족상, 족금 사진을 업로드하고 당신의 재물운, 연애운, 건강운을 무료로 확인하세요.">
+    <meta name="keywords" content="손금, 족상, 족금, 사주, 운세, AI 관상, AI 손금">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Pretendard:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MediaPipe for 0-Cost Local AI Image Validation -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js"
+        crossorigin="anonymous"></script>
+
+    <!-- Google AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_CLIENT_ID" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header>
+        <div class="logo">
+            <span class="logo-icon">✨</span>
+            <h1>Destiny AI Scan</h1>
+        </div>
+        <p class="subtitle">첨단 AI 기반 생체 인식 운명 분석 시스템</p>
+    </header>
+
+    <!-- AdTop -->
+    <div class="ad-container top-ad">
+        <p class="ad-placeholder">Google AdSense<br>(Top Banner)</p>
+    </div>
+
+    <main class="glass-panel">
+        <!-- View 1: Selection & Upload -->
+        <section id="upload-view" class="view active">
+            <h2>분석할 항목을 선택하세요</h2>
+            <div class="type-selector">
+                <button class="type-btn active" data-type="손금">✋ 손금</button>
+                <button class="type-btn" data-type="관상">👤 관상</button>
+                <button class="type-btn" data-type="족금">🦶 족금</button>
+            </div>
+
+            <div class="upload-area" id="upload-area">
+                <input type="file" id="image-upload" accept="image/*" hidden>
+                <div class="upload-content">
+                    <div class="upload-icon">📸</div>
+                    <h3>사진을 업로드하거나 터치하여 촬영하세요</h3>
+                    <p>분석 데이터는 서버에 저장되지 않아 기기에 안전하게 처리됩니다.</p>
+                    <button class="btn-primary" onclick="document.getElementById('image-upload').click()">사진
+                        선택하기</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- View 2: Scanning Effect -->
+        <section id="scanning-view" class="view hidden">
+            <h2>AI 정밀 스캔 중...</h2>
+            <div class="scanner-container">
+                <img id="preview-image" src="" alt="Uploaded source">
+                <div class="scanner-line"></div>
+                <div class="scanner-overlay"></div>
+            </div>
+            <div class="status-console">
+                <p id="scan-status" class="terminal-text">> 이미지 데이터를 로드하는 중...</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- View 3: Result -->
+        <section id="result-view" class="view hidden">
+            <h2 class="result-title">✨ 분석이 완료되었습니다 ✨</h2>
+
+            <div class="result-card">
+                <div class="result-category">
+                    <h3>💰 재물운</h3>
+                    <p id="result-wealth">재물운 결과 텍스트가 여기에 나타납니다.</p>
+                </div>
+                <div class="result-category">
+                    <h3>❤️ 애정운</h3>
+                    <p id="result-love">애정운 결과 텍스트가 여기에 나타납니다.</p>
+                </div>
+                <div class="result-category">
+                    <h3>👑 종합운</h3>
+                    <p id="result-general">종합운 결과 텍스트가 여기에 나타납니다.</p>
+                </div>
+            </div>
+
+            <!-- AdInContent -->
+            <div class="ad-container middle-ad">
+                <p class="ad-placeholder">Google AdSense<br>(In-Content Banner)</p>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-secondary" id="btn-share">결과 공유하기 💬</button>
+                <button class="btn-primary" id="btn-retry">다시 분석하기 🔄</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- AdBottom -->
+    <div class="ad-container bottom-ad">
+        <p class="ad-placeholder">Google AdSense<br>(Bottom Banner)</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Destiny AI Scan. All rights reserved.</p>
+        <p class="disclaimer">본 서비스는 엔터테인먼트 목적으로 제공되며, 과학적 근거를 바탕으로 하지 않습니다.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
